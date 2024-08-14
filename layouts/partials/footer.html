@@ -15,8 +15,8 @@
       {{ if (not $.Site.Params.disableAttribution) }}
       {{ with $.Site.Home.OutputFormats.Get "rss" -}}
       <a class="" href="{{ .Permalink }}" target="_blank">
-        <span class="icon">
-          <img alt="rss" src='{{ (resources.Get "icons/svg/rss.svg").Permalink }}'>
+        <span>
+          RSS
         </span>
       </a>
       {{ end }}
