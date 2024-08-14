@@ -13,7 +13,15 @@
     
     <p>
       {{ if (not $.Site.Params.disableAttribution) }}
-      <a href="https://imlauera.github.io" target="_blank">Andres Imlauer.</a>
+      {{ with $.Site.Home.OutputFormats.Get "rss" -}}
+      <a class="" href="{{ .Permalink }}" target="_blank">
+        <span class="icon">
+          <img alt="rss" src='{{ (resources.Get "icons/svg/rss.svg").Permalink }}'>
+        </span>
+      </a>
+      {{ end }}
+      | <a href="https://imlauera.github.io" target="_blank">Andres Imlauer.</a> 
+
       {{ end }}
       {{ if $.Site.Params.repoLink }}
       Blog source code <a href="{{ $.Site.Params.repoLink }}" target="_blank">available on Github</a>.
