@@ -12,7 +12,7 @@
     {{ range .Param "tags" }}
     {{ $name := . }}
     {{ with $.Site.GetPage (printf "/%s/%s" "tags" ($name | urlize)) }}
-    <a class="tag is-danger" href="{{ .Permalink }}">{{ .Title }}</a>
+    <a class="tag is-info" href="{{ .Permalink }}">{{ .Title }}</a>
     {{ end }}
     {{ end }}
     {{ end }}
