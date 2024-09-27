@@ -20,5 +20,5 @@
 {{ end }}
 
 {{ define "main" }}
-{{ partial "posts.html" (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+{{ partial "posts.html" . }}
 {{ end }}
