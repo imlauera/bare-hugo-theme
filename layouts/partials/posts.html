@@ -2,7 +2,7 @@
 {{ $pages := where .Site.RegularPages "Type" "post" }}
 {{ $pages = $pages.ByDate.Reverse }}
 <div class="posts">
-{{ range (.Paginate $pages 200).Pages }}
+{{ range (.Paginate $pages 250).Pages }}
   <div class="post">
     <div><a href="{{.Permalink }}" class="title is-size-5">{{ .Title }}</a></div>
     <div class="subtitle is-6">{{ .Date.Format "January 02, 2006" }}</div>
