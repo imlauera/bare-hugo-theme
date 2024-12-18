@@ -3,9 +3,9 @@
 {{ $options := (dict "outputStyle" "compressed") }}
 {{ $sass := resources.Get "css/site.sass" }}
 {{ if $.Site.Params.postcss }}
-{{ .Scratch.Set "sass" ($sass | resources.ToCSS $options | postCSS | resources.Minify) }}
+{{ .Scratch.Set "sass" ($sass | css.Sass $options | postCSS | resources.Minify) }}
 {{ else }}
-{{ .Scratch.Set "sass" ($sass | resources.ToCSS $options | resources.Minify) }}
+{{ .Scratch.Set "sass" ($sass | css.Sass $options | resources.Minify) }}
 {{ end }}
 <head>
   {{ template "_internal/opengraph.html" . }}
